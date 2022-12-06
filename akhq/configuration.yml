@@ -1,0 +1,12 @@
+akhq:
+  connections:
+    dev-msk:
+      properties:
+        security.protocol: SASL_SSL
+        sasl.mechanism: AWS_MSK_IAM
+        sasl.jaas.config: software.amazon.msk.auth.iam.IAMLoginModule required awsDebugCreds=true;
+        sasl.client.callback.handler.class: software.amazon.msk.auth.iam.IAMClientCallbackHandler
+        bootstrap.servers: b-1-public.ssnetrpgspikemsk0.x6zw3j.c5.kafka.ap-southeast-1.amazonaws.com:9198,b-2-public.ssnetrpgspikemsk0.x6zw3j.c5.kafka.ap-southeast-1.amazonaws.com:9198
+    docker:
+      properties:
+        bootstrap.servers: localhost:9092
